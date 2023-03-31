@@ -1,4 +1,4 @@
-const socket = io('/');
+const socket = io('webrtc-streaming-video.onrender.com');
 const peer = new Peer(undefined, {
   host: 'webrtc-streaming-video.onrender.com',
   secure:'true',
