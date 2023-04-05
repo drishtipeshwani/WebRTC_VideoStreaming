@@ -1,5 +1,10 @@
-const socket = io('https://webrtc-streaming-video.onrender.com');
-const peer = new Peer();
+const socket = io('webrtc-streaming-video.onrender.com');
+const peer = new Peer(undefined, {
+  secure:true,
+  host: "webrtc-streaming-video.onrender.com",
+  port: 443,
+  path: "/app",
+});
 
 const video = document.getElementById('videoPlayer');
 const fileInput = document.getElementById('fileInput');
@@ -7,9 +12,10 @@ const sendButton = document.getElementById('sendButton');
 
 peer.on('open', function (id) {
   // Unique peer join the dashboard
-  socket.emit('join', DASHBOARD_ID, id);
+  socket.emit('join', id);
   // Sender Side 
   socket.on('userJoined', (userId) => {
+    alert('User Joined')
     const conn = peer.connect(userId.userId);
     conn.on('open', function () {
       sendButton.addEventListener('click', function () {
