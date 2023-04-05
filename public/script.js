@@ -1,9 +1,5 @@
 const socket = io('https://webrtc-streaming-video.onrender.com');
-const peer = new Peer(undefined, {
-  host: "webrtc-streaming-video.onrender.com",
-  port: 3000,
-  path:"/peerjs/myapp"
-});
+const peer = new Peer();
 
 const video = document.getElementById('videoPlayer');
 const fileInput = document.getElementById('fileInput');
