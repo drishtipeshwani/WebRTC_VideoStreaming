@@ -1,25 +1,18 @@
 {
   "name": "video_streaming",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "repository": "https://github.com/drishtipeshwani/WebRTC_VideoStreaming.git",
+  "author": "drishtipeshwani <archiepeshwani09@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "scripts": {
-    "start": "node server.js",
-    "devStart": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node server.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
     "peer": "^1.0.0",
-    "socket.io": "^4.6.1",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.21"
+    "socket.io": "^4.6.1"
   }
 }
