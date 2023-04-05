@@ -6,7 +6,7 @@ const io = require('socket.io')(server); // Passing the server created to socket
 
 const { PeerServer } = require("peer");
 
-const peerServer = PeerServer({ port: 3001, path: "/app" });
+const peerServer = PeerServer({ port: 9000, path: '/myapp', server });
 
 // Set up Express.js
 app.set('view engine', 'ejs');
