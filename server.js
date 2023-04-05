@@ -4,7 +4,6 @@ const app = express();
 const server = require('http').Server(app);
 const io = require('socket.io')(server); // Passing the server created to socket.io 
 
-const { ExpressPeerServer } = require("peer");
 
 // Set up Express.js
 app.set('view engine', 'ejs');
@@ -31,8 +30,3 @@ const port = 3000;
 server.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
-
-const peerServer = ExpressPeerServer(server, {
-	path: "/myapp",
-});
-app.use("/peerjs", peerServer);
