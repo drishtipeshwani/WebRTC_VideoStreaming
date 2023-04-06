@@ -1,5 +1,8 @@
 const socket = io('https://webrtc-streaming-video.onrender.com');
-const peer = new Peer();
+const peer = new Peer(undefined, {
+  host: "webrtc-streaming-video.onrender.com",
+  path:"/peerjs/myapp"
+});
 
 const video = document.getElementById('videoPlayer');
 const fileInput = document.getElementById('fileInput');
@@ -53,6 +56,9 @@ peer.on('open', function (id) {
         });
       });
     })
+  })
+  socket.on('userDisconnected',(userId)=>{
+    alert('User disconnected')
   })
 });
 
