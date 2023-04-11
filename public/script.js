@@ -1,6 +1,6 @@
-const socket = io('https://webrtc-streaming-video.onrender.com');
+const socket = io('https://video-streaming.adaptable.app');
 const peer = new Peer(undefined, {
-  host: "webrtc-streaming-video.onrender.com",
+  host: "video-streaming.adaptable.app",
   path:"/peerjs/myapp"
 });
 
